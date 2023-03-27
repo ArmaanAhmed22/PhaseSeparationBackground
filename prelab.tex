@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,subfiles}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{amssymb}
+\usepackage[makeroom]{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\pgfplotsset{compat = newest}
+\title{Comments for "Phase Transitions of Associative Biomacromolecules"}
+\author{Armaan Ahmed}
+\date{March 2023}
+
+\begin{document}
+
+\maketitle
+
+Note: Any outside sources are cited by "([Last Name], [Article Title], [Year])"
+
+\section{Introduction}
+
+\textbf{Biomolecular condensates}: Assemblies of usually hundreds of molecules concentrated into a small volume between the nano and micro scales (size of individual proteins to size of cells).
+
+\begin{enumerate}
+    \item Not usually homogenous, and can have different stoichiometries of different macromolecules.
+    \item These condensates usually behave, in the long time scales, similar to viscous or elastic materials.
+\end{enumerate}
+
+Phase separation and condensate formation occur hand-in-hand.
+
+\subsection{}
+
+\textbf{Physical gelation}: A type of phase-separation instantiating the concept of \textit{bond percolation}, in which a transition branching across a given network driven by inter-polymer cross-linking interactions, occurs. Physical vs chemical gelation is a matter of the nature of the cross-linking interactions. Physical gelation is reversible.
+
+\begin{enumerate}
+    \item "Percolation theory deals with the numbers and properties of the clusters formed when sites are occupied with probability $p$" (Christensen, Percolation Theory, 2002)
+    \item For example, \textit{in vitro} gelation can happen in a protein solution by cohesive sticker-sticker interactions.
+    \item Relavent amino-acid level stickers are Gly or Gly-Leu-Phe-Gly motifs.
+    \item Physical gelation occurs, in part, as a cause of exceeding a certain critical protein sticker concentration
+    \item Gels have properties of both liquids and solids, ie a liquid that has elastic-resistance.
+\end{enumerate}
+
+In vitro reversible gelation can be formed based on:
+
+\begin{enumerate}
+    \item Number of stickers
+    \item Temperature
+    \item Peptide structures (eg, alpha helices)
+    \item Intrinsically disordered regions of RNA binding proteins
+\end{enumerate}
+
+\textbf{Questions:}
+
+\begin{enumerate}
+    \item What exactly distinguishes a general liquid to solid phase transition to gelation?
+\end{enumerate}
+
+\subsection{}
+
+Gel "strength" (ie, strong or weak) depends on on the strength of the component cross-link interactions.
+
+Gels are not necessarilly equivalent to solids or glass, and analogously, gelation is not equivalent to solidification nor vitrification (solidification without forming structured crystal structures).
+
+However, gelation may imply vitrification if the rate of molecular movement is faster than the rate of cross/uncross-linking. \textbf{Why is this so? What is the molecular difference between gelation and vitrification?}. The article mentions that although liquid water is a network of hydrogen-bonded water molecules, it is not a gel, which is okay because the rate of bond making/breaking is faster than water-molecule movement (diffusion), \textbf{Why?}.
+
+The rheology (related to topological properties/deformation characteristics) of gels are determined by the rate of molecular transport versus that for making/breaking bonds.
+
+\textbf{Throughout this article, gels are defined only focusing on connectivity!}
+
+\subsection{}
+
+Intrinsically disorded regions (IDRs; regions without any defined shape, usually allows for non-specific associations) are important regions for when discussing the polymer-polymer association in liquids and polymer-solvent associations.
+
+\begin{enumerate}
+    \item "A major surprise was the discovery that water is a poor solvent for homopolypeptides such as polyglutamine and polyglycine" - Charged and/or hydrophobic residues minimize interactions with polar water. So, polymers composed of these types of residues can be more easily phase-separated (ie molecules segregate from one another).
+    \item Importantly, specific amino acid composition of chains can tip the balance between chain-chain, solvent-chain, and solvent-solvent interactions. (ie, we can also think about having an insoluble salt in water, generally in this case the salt-water interaction is weaker than the water-water interaction, thus remains phase separated).
+\end{enumerate}
+
+\subsection{}
+
+\textbf{Phase separation in cells: } First example is the formation P granules in \textit{C. elegans}. Distinct granules formed or dissolved at specified protein and RNA concentratoions. Interestingly, these granules obeyed laws of Newtonian fluids (droplets fused, flows in response to applied forces, and droplets have round shapes)
+
+\subsection{}
+
+There is a deep connection between physical gelation and phase separation, at least for proteins with multiple binding sites (ie protein multivalency) having folded domains (stickers) connected by disordered linkers.
+
+Linkers are important: If a linker can be well-solvated, the both percolation and phase-separation is weakened. If a linker is completely Guassian (ie random walker, does not have solvent interactions, "purely entropic"), percolation is enhanced by being coupled with phase separation.
+
+\subsection{}
+
+In a macromolecular solution, there are two terms whose sum correspond to its overall free energy: \textbf{the free energy of mixing, and the free energy of reversible associations among macromolecules}. Ie, sum of energies when macromolecules are being mixed and when re-separating.
+
+\textbf{Phase separation: } "a segregative transition that gives rise to two or more compositionally distinct phases that coexist with one another."
+
+Reversible associations among macromolecules are driven by physical interactions between stickers (cohesive motifs). Interactions include hydrogen bonding, Coulombic interactions, and aromatic/hydrophobic group interactions.
+
+A system of hard-sphere fluids (Figure 1) can percolate and phase-separate.
+
+\begin{itemize}
+    \item Percolation is an associate transition: macromolecules associate/cross-link with one another. Associative transitions are driven by geometric/topological considerations. Conformation and/or self-assembly are drivers for this type of transition.
+    \item Phase separation is segregative, ie system is separated into $\geq$2 phases.
+    \item Associative/segregative transitions can happen hand in hand. COupled Associated and Segregative phase Transitions (COAST).
+\end{itemize}
+
+*In the Mintonian view, phase separation is binarized as just being associative or segregative depending on just the driving interactions. However, especially for a system of n-macromolecules, this is over-simplifying: we have to consider all the pairwise segregative and associative terms between these macromolecules in addition to pairwise solvent interactions.
+
+\textbf{Multivalent associative macromolecules: } Ie, macromolecule containing stickers that allow for site-/chemistry-specific interactions more favorable than solvent-mediated ones.
+
+\textbf{Patchy colloids: } Stickers are of defined sizes and orientations enabling site-specific interactions between the colloids (like intrinsically folded domains of proteins encoding binding specificity).
+
+\textbf{Linear associative polymers: } Linear polymers having sticker motifs allowing for specific intra-/inter-polymer cross-linking.
+
+Strengths of these types of reversible, specific cross-linkings spans orders of magnitudes, even just depending on available thermal energy (temperature).
+
+Regions in between stickers are called \textbf{spacers}. Spacers influence solvent-polymer interactions (solubility), thus influencing percolation threshholds and also inter-polymer sticker-sticker interactions.
+
+Generally, it can be non-trivial to distinguish between stickers and spacers. Ie, to distinguish requires precise knowledge about the context the polymer-of-question is in. However, this binirization is a useful abstraction to organize the driving factors for transitioning.
+
+Sticker interactions allow for the formation of reversible cross-links. Relavent sticker-sticker interactions: salt bridges, hydrogen bonds, ionic interactions, and varying $\pi$ system interactions.
+
+The sticker-spacer formalism can be applied to nucleic acids as well: stickers are nucleotides driving the specificity of base-pairing, secondary structure formation, and inter-polynucleotide interactions, while spacers are the rest.
+
+\textbf{Questions:}
+
+\begin{itemize}
+    \item Dr. Zhang, a lot of your recent works relates to studying 2-body systems. Are there plans to expand to $n$-body systems, and how much more difficult is their study?
+\end{itemize}
+
+\subsection{}
+
+"An order parameter is a measure of the degree of order across the boundaries in a phase transition system" (Wikipedia).
+
+\begin{enumerate}
+    \item Segregative transitions: the order parameter is the density vector of a system.
+    \item Associative transitions: order parameter related to the number of cross-links, topology, cluster density, etc.
+    \item 
+\end{enumerate}
+
+Order parameters can change quickly during a phase transition.
+
+COAST examples include Phase separation coupled to percolation (obviously, abbreviated as PSCP) and complex coacervation (which is the associative liquid-liquid phase separation of a mixture of oppositely charged polymers; Sing and Perry, Recent progress in th escience of complex coacervation, 2020). PSCP and complex coacervation are basically the same thing, except coacervation implies electrostatistic associative interactions (so, PSCP is used for non-electrostatic associative interactions).
+
+There are other COAST processes.
+
+\end{document}

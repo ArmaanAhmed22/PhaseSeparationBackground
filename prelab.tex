@@ -146,4 +146,62 @@ COAST examples include Phase separation coupled to percolation (obviously, abbre
 
 There are other COAST processes.
 
+\textbf{Is order parameter related to the entropy across the boundary?}
+
+\section{}
+
+Purely segregative phase separation gives rise to multiple coexisting phases, and there can be liquid-liquid, solid-liquid, liquid-liquid-crystalline, etc, phase separation.
+
+For multipolymer systems, segregative phase seperation occurs because of a mixture of pairwise favorable and unfavorable interactions between different types of polymers.
+
+\textbf{Density transitions: } segregative phase transitions of a system with only one type of polymer.
+
+\subsection{}
+
+Simple example: when there is a system of elastically colliding (but inpenetrable) solid balls, all with radius $\sigma$ Potential energy is:
+
+\[U(r_i,r_j)=\begin{cases}
+    0 & |r_i-r_j| \geq \sigma\\
+    \infty & |r_i-r_j| < \sigma
+\end{cases}\]
+
+Which is quite obvious... This is essentially saying that there is infinite repulsion between intersecting balls and otherwise no interaction.
+
+This kind of system undergoes "freezing" transitions, where there is a solid phase and a dilute liquid phase after a saturation concentration.
+
+Phase separation occurs because after a certain concentration, the system will obtain its lowest free energy (which here is equivalent to its higher entropy) state by forming a solid phase.
+
+\textbf{Radial distribution function: } This function $g(r)$ describes for radially symmetric systems the relative probability of finding a particle at a distance $r$ from a fixed particle. There is usually a short-range peak (for example, liquid argon has one in the single digit Angstroms range) and a long-range tail (ie, short range order and long range disorder for liquids).
+
+As the density increases, the probability distribution begins "evening out", so an equilibrium freezing transition occurs to generate a more disordered dilute phase. (like if you increase the pressure of a gas by pumping in more, at some point it some will condensate out.)
+
+Now we take the configuration integral:
+
+\[Z_N=\int e^{\frac{\sum_{pairwise} U(r_i,r_j)}{k_bT}}d^{3N}r\]
+
+\textbf{I understand the concept of partition function as the discrete sum of all possible configurations of a system, but I am a little uncertain as to how this is related to the above integral, which is also known as the configurational partition function}.
+
+$N$ is the number of hard spheres. When using the simple elastic potential, The above configuration integral becomes independent of temperature, and so the thermodynamics depends only on the density. Higher density means lower accessible volume (less number of possible states), meaning lower entropy, thus the system seeks to minimize it free energy by reducing its density (ie creating a dilute phase).
+
+For a one-component system, this entropy driven liquid-to-solid transition is called a \textbf{density transition}.
+
+The shape of the crystals is determined by the shape of each particle (ie rods, disks, etc).
+
+\subsection{}
+
+Now, instead of completely elastic fluids, we can talk about more realistic \textbf{van der Waals fluids}. These are fluids where the component particles experience short-range gradually increasing repulsive forces and long range attractive forces (attractive because of London dispersion forces, which are attractive). The standard 12-6 Lennard-Jones potential is an example potential for van der Waals fluids:
+
+\[U_{LJ}(r_i,r_j)=4\varepsilon_{ij}[(\frac{\sigma_{ij}}{|r_i-r_j|})^{12} - (\frac{\sigma_{ij}}{|r_i-r_j|})^6]\]
+
+\begin{itemize}
+    \item $\varepsilon_{ij}$ gives the depth of the potential trough
+    \item $\sigma_{ij}$ is the distance between the particles at which the potential is zero
+\end{itemize}
+
+
+
+
+
+
+
 \end{document}

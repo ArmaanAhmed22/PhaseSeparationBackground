@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{parskip}
+\usepackage{hyperref}
 \setlength{\parindent}{0pt}
 \pgfplotsset{compat = newest}
 \title{Comments for "Phase Transitions of Associative Biomacromolecules"}
@@ -198,10 +199,55 @@ Now, instead of completely elastic fluids, we can talk about more realistic \tex
     \item $\sigma_{ij}$ is the distance between the particles at which the potential is zero
 \end{itemize}
 
+The short-range forces are most important for determining the structure of the fluid at equilibrium! Changing the exponent of the repulsive term (power 12) can change when the liquid phase separates and forms a coexisting solid phase. The attractive term also gives rise to temperature sensitivity to the fluid (and hence the phase transition).
 
+Phase transitions happen according to a phase diagram (gas, liquid, or solid phase).
 
+\subsection{}
 
+In some biological systems, the model of self-avoiding polymers (high repulsive forces at short range) works, for example cDNA in certain rod-shaped bacteria. The self-avoiding polymers have a entropy reduction effect from being in close vicinity, so they form distinct chromosome-rich phases.
 
+Even simply, entropically-modeled particles can explain some of the spatial organization of cells, even the simplest kinds.
 
+Hard sphere transitions can also be catalyzed by active molecular steering.
+
+\section{}
+
+\subsection{}
+
+In reality, cells are complex: made of many molecules, non-ideal solvents, etc.
+
+Flory-Huggins Theory describes complex polymer solutions:
+
+An important quantity is $\Delta \mu_{mix}$:
+
+\[\Delta\mu_{mix}=k_B T\left( \sum_i \frac{\phi_i}{N_i}\ln \phi_i + \frac{1}{2}\sum_{i,j} \phi_i \phi_j \chi_{ij}\right)\]
+
+For a binary system and my conservation of mass:
+
+\[\Delta\mu_{mix}=k_B T\left( \frac{\phi_A}{N_A}\ln \phi_A + \frac{1-\phi_A}{N_B}\ln (1-\phi_A) + \phi_A (1-\phi_A) \chi_{AB}\right)\]
+
+This is the \textbf{free energy density of mixing:} This describes the free energy change per molecule of the system when transferring molecules from single-component, homogenous phases. This model assumes no higher order interactions (three body), no volume change upon mixing, and that the components are randomly dispersed in the system.
+
+\begin{itemize}
+    \item $\phi_i$ is the volume fraction of component $i$
+    \item $N_i$ is the number of monomers in component $i$ (around 1 for spherical macromolecules or small molecules)
+    \item $\chi_{ij}$ is a pairwise interaction term between the components $i$ and $j$ compared to single-component interactions.
+\end{itemize}
+
+If $\chi_{ij}$ is non-positive (0 for ideal mixture with no energetic effect, or negative), then there will always at least be an entropic favoring of mixing.
+
+\textbf{Question}
+
+\begin{enumerate}
+    \item When does the pairwise estimation fail to hold? When do we need to consider higher order interactions?
+    \item For one-component systems, density transitions can occur, when only having an entropic effect. Why does this not scale to $n$-component systems, intuitively? (article mentions that there is change in the degrees of freedom, but what is the fundamental reason?)
+    \item Is the entropic term in the free energy density of mixing related to Shannon entropy from information theory?
+\end{enumerate}
+
+A simulation can be found \href{https://www.desmos.com/calculator/0n2oervaub}{here} for binary monomer mixing
+\subsection{}
+
+When $\chi$ is positive, this indicates that beyond some threshold 
 
 \end{document}

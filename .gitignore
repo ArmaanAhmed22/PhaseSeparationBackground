@@ -1,0 +1,13 @@
+**/*.log
+
+**/*.fls
+
+**/*.fdb_latexmk
+
+**/*.aux
+
+**/*.synctex.gz
+
+notes_article1
+
+prelab.out

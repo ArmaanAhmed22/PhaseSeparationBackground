@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,subfiles}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{amssymb}
+\usepackage[makeroom]{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\pgfplotsset{compat = newest}
+\title{MD Simulation Notes}
+\author{Armaan Ahmed}
+\date{April 2023}
+
+\begin{document}
+
+\maketitle
+
+A basic MD Simulation is based off of Newtonian physics:
+
+\[ma=F\]
+
+For a molecule $i$, need to sum over all the pairwise interactions. Then can numerically integrate or use:
+
+\[\frac{x(t+dt)-x(t)}{dt} = v(t)\]
+
+For solated system, there are too many particles. So, we use implicit solvent:
+
+\[ma=F+F_{drag}+F_{noise}\]
+
+The drag and noise encapsulate the effect of the solvent on the particle (ie drag force on the molecule). Essentially water is treated as just a continuum. Noise term accounts for the brownian motion, which is the ``kick'' given off by the water molecules. With implicit solvent, we need to use more parameteres, ie what is viscocity of water.
+
+TwoChain\_np.chain specifies the number of bonds, number of molecules, locations, velocities
+
+``Atoms'':
+
+Index,chain,atom\_type,
+
+``Velocities'':
+
+``Bonds'':
+
+Index,bond\_type,bonded\_atom\_1,bonded\_atom\_2.
+
+Can also define bond angle, but optional.
+
+In ``in\_np.chain'' file:
+
+Units: scale
+Boundary considerations
+Atom\_style: specifies the connections
+
+read\_data: topology of system
+
+Bond\_style: what type of connection (normally has harmonic potential)
+
+Bond coeff: parameters of the bond.
+
+special\_bonds: get rid of pairwise interaction between bonded pairs.
+
+Eg, lj 0.0 1.0 1.0
+
+lj is a special parameter
+
+pair\_style: cutoff distance for the interactions.
+
+\end{document}

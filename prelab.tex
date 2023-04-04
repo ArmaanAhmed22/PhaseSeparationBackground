@@ -72,6 +72,8 @@ The rheology (related to topological properties/deformation characteristics) of 
 
 \textbf{Throughout this article, gels are defined only focusing on connectivity!}
 
+Macroscopic definitions of gels are very intuitive, liquid and solid parts.
+
 \subsection{}
 
 Intrinsically disorded regions (IDRs; regions without any defined shape, usually allows for non-specific associations) are important regions for when discussing the polymer-polymer association in liquids and polymer-solvent associations.
@@ -248,6 +250,143 @@ If $\chi_{ij}$ is non-positive (0 for ideal mixture with no energetic effect, or
 A simulation can be found \href{https://www.desmos.com/calculator/0n2oervaub}{here} for binary monomer mixing
 \subsection{}
 
-When $\chi$ is positive, this indicates that beyond some threshold 
+When $\chi$ is positive, this indicates that beyond some threshold, there will be a liquid-liquid separation (ie, coexisting ``dense'' $\phi_{dense}$ and ``dilute'' $\phi_{sat}$ [dilute phase at the saturation concentration] phases of a molecule in the system).
+
+Interesting consequence of this phase separation: there will be a interface between the dense and dilute phases, and thus solvent (low-molecular weight molecules) will transport to the dense phase to minimize the chemical potential difference (ie normalized particle count) created by this phase separation. But, this transport will generate an opposing osmotic pressure.
+
+So, at chemical and osmotic equilibrium, $\phi_{dense}$ and $\phi_{sat}$ must satisfy:
+
+\[\mu_{m,T}(\phi_{sat})=\mu_{m,T}(\phi_{dense})\]
+
+\[\Pi_{m,T}(\phi_{sat})=\Pi_{m,T}(\phi_{dense})\]
+
+Equalizing the chemical potentials ($\mu$) and the osmotic pressures ($\Pi$) of the two phases.
+
+As a note, theorists use $\phi$ (volume fraction) and experimentals use $c$ (concentration).
+
+In theory, polymer ``melts'' is a case of an almost perfect dense phase ($\phi\approx 1$), but, in vitro, the volume fraction is almost always at least one order of magnitude lower.
+
+\subsection{}
+
+In a mixture with linear polymer $A$ (with $n_p$ monomers) and solvent $B$, the excluded volume per monomer/effective solvation volume $v_{ex}$ or $v_{es}$ is given by averaging over the intermonomer distances in the solution volume using a specified potential of mean force $W$ (this is a quantity that represents the projection of a free energy profile onto a distance axis):
+
+\[v_{ex}=-\int_0^{\infty}\left(e^{-\frac{W(r)}{k_B T}}-1\right) r^2\,dr\]
+
+$e^{-\frac{W(r)}{k_B T}}=g(r)$, the radial distribution function, so $v_{ex}$ encapsulates the probable volume occupied by any given monomer by taking an infinite sum over the distribution of position states.
+
+For $v_{ex}>0$ means that the polymer is well-solvated, so on average the monomers are more repulsive towards one another. If the monomer-monomer and monomer-solvent interactions are similar then, $v_{ex}\approx 0$. And if the solvent is poor, then $v_{ex}<0$. This can be used to define the ``osmotic second virial coefficient'' ($B_2$), which is a measure of the strength of the monomer-monomer vs monomer-solvent interactions.
+
+\[B_2'=B_2M_w^2\]
+
+Where $M_w$ is the molecular weight of the polymer and $B_2'$ is:
+
+\[B_2'=-2\pi\int_0^{\infty}\left(e^{-\frac{W(r)}{k_B T}}-1\right) r^2\,dr\]
+
+\[B_2'=2\pi v_{ex}\]
+
+\[B_2 = \frac{2\pi v_{ex}}{M_w^2}\]
+
+So, $B_2$ changes as the potential of mean force changes (ie if we change pH, addinh $H^+$ to the solvent) or temperature or concentration changes. $B_2$ also negatively linearly depends on the Florey-Higgins $\chi$ interaction parameter, but takes into account pressure!
+
+To measure the second virial coefficient we just need to plot osmotic pressure normalized to solute concentration vs the solute concentration (Zimm plot)
+
+\subsection{}
+
+Florey-Higgins theory scales well when consider multiple polymers dissolved in a solvent, we just use matrix form:
+
+\[\Delta \mu_{mix}=k_BT(\phi_N'\ln \phi+\phi' X \phi)\]
+
+
+Where $\phi_n=(\phi_1/N_1,...,\phi_n/N_n)$, $\phi=(\phi_1,...,\phi_n)$ and $X$ is the n by n square matrix denoting the $\chi_{ij}$ pairwise interactions.
+
+Obviously, findout out what the elements of $X$ are will help determine the driving factors of phase-separation and what interactions are the most important to study.
+
+As mentioned, there is a proportionality between $\chi_{ij}$ and $B_{ij}$, thus finding either $X$ or $B$ is equivalent.
+
+We can populate the $B$ matrix by keeping all concentrations fixed except for the $i$ and $j$th interaction of interest and generating a Zimm plot.
+
+\textbf{Definition: scaffold: } a macromolecular driver of phase separation in $n$-component mixtures.
+
+People use the $B$ matrix and identify the normalized top negative interactions to obtain the scaffolds.
+
+\subsection{}
+
+Obviously, $\chi_{ij}=\chi_{ji}$, thus there are $\frac{n(n-1)}{2}$ free $\chi$ parameters.
+
+The number of components $n$ scales with the number of degrees of freedom and the number of coexisting phases $p$ reversily scales with the number of degrees of freedom:
+
+\[F=n-p+2\]
+
+\textbf{Why is the number of degrees of freedom defined like this?}
+
+\[p_{max}=n+2\]
+
+So, for $n=1$, there must be a maximum of three possible phases coexisting (ie triple point).
+
+Regarding the $X$ or $B$ matrix, it can be interesting to look at the variance $\sigma_{2}$ (pairwise) of the elements.
+
+Jacobs and Frenkel made certain predictions based on a mean-field model they developed:
+
+For $\sigma_{2}$ small and $n$ large, then there will be an overall dilute and overall dense phase (with respect to any polymer). For $\sigma_2$ large and $n$ small, then the system will be solvent balanced but rich in different polymers in different regions.
+
+If the diagonal elements dominate, then there will be $n$ distinct phases enriched in the corresponding polymer and a phase dilute in each in each polymer.
+
+The order parameter $\phi$ only captures the global concentration of each component in a given phase and thus cannot be used to probe local effects/inhomogeneities.
+
+\subsection{}
+
+At least in aqueous solutions, temperature is a important parameter to determine phase diagrams (when phase transitions occur)
+
+\textbf{thermoresponsive phase behavior: }The phase behavior in response to temperature changes
+
+Polymer solutions can have an upper or lower critical solution temperature (UCST/LCST), which posits the existance of a maximum/minimum temperature when there is no longer any phase separation.
+
+For UCST systems, upon approaching this critical temperature $\chi$ becomes less positive by an enthalpically driven process where polymer-polymer attractions become weaker.
+
+For LCST systems, there is an entropic penalty to having the solvent ``well-solvate'' the polymer (ie interact with it strongly, as they become stuck), and this penalty increases with higher temperatures, so after a certain critical temperature we will observe phase separation.
+
+Systems can be a combination of both UCST and LCST (elliptical or hyperbolic type phase diagrams).
+
+\section{}
+
+\subsection{}
+
+A simple associative molecule: a hard sphere with an attractive patch, where three properties are important:
+
+\begin{itemize}
+    \item size
+    \item interaction strength
+    \item types of organizational structures possible
+\end{itemize}
+
+In a gas, the time scale of inter-particle cross-links will be determined by the srength of the interaction.
+
+In a liquid, this is true but also density will play a role.
+
+Regarding organization, for example, if we have a system of two-patch particles and if the patches are an order of magnitude smaller than the particle, then the patches will be able to form linear network.
+
+\textbf{Intuitively, why does polymer organization depend on the size of the patch?}
+
+For a system of $n$-patch particles, there will be a characteristic distribution of cluster sizes, which shifts upward as particle concentration increases, until it networks the whole system (starting point at $c_{perc}$). As the concentration grows above $c_{perc}$, extra particles begin incorporating in the largest cluster.
+
+Below $c_{perc}$ there can be a wider degree of concentration inhomogeneity, especially comparing the bulk concentration to the small cluster concentrations, but this it tampered after $c_{perc}$ (more homogenous), as clusters merge into one system spanning one.
+
+The relation between connectivity and concentration constitutes a relavent order parameter (ie characterization) for a percolation.
+
+Chemically-crosslinked gels can swell or shrink to include or exclude solvent, whereas physically-crosslinked gels forms/breaks apart according to solvent changes.
+
+Percolation threshhold is a function of valence (ie number of patches per particle) and the strength of the of each cross-link.
+
+\subsection{}
+
+For the type of network described before, the number of molecules within a cluster is the \textbf{molecularity} of the cluster
+
+\textbf{microscopic binding reaction: } $x$ number of molecule $A$ come together to form an associative cluster or $x$ number of $A$ and $y$ number of $B$ form a cluster according to their valency-determined stoichiometry.
+
+There is an opposite limit - \textbf{isodesmic associations: }These don't involve exact stoichiometries and this process is characterized by the average molecularity of species in solution always increasing with concentration and there being an elementary association constant.
+
+Now, consider a system of either patchy particles or linear polymers with $n_s$ stickers. There is a mean field theory, assuming a ``gas'' of stickers (like spherical particles with patches or intermolecularly interacting linear polymers)
+
+
 
 \end{document}

@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,subfiles}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{amssymb}
+\usepackage[makeroom]{cancel}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\pgfplotsset{compat = newest}
+\title{Notes for Nucleation}
+\author{Armaan Ahmed}
+\date{April 2023}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Nucleation: } the formaion of a thermodynamic phase from self-assembly, within a substance or mixture. It is defined by how long it takes for said phase to form. An example is liquid water below freezing temperature. Slightly below, the event to nucleation is a long process but as the temperature decreases, the process becomes faster and faster.
+
+Impurities can control the nucleation time as it is stochastically driven.
+
+In \textbf{continuous phase transitions}, phases start to continuously form immediately.
+
+\textbf{Classical Nucleation Theory (CNT): } a common theoretical model to study nucleation kinetics. The central formula is:
+
+\[R=N_S Z j e^{-\frac{\Delta G^*}{k_B T}}\]
+
+\begin{enumerate}
+    \item $e^{-\frac{\Delta G^*}{k_B T}}$ is a value related to the free energy cost for the nucleus to keep growing instead of shrink back to nothing. This is the probability form, the energy is given by $\Delta G^*$
+    \item $N_S$ is the number of nucleation sites
+    \item $j$ reflects the ability for other molecules to attach to the nucleus and help it grow.
+    \item $Z$, the Zeldovich factor Is the probability that once the nucleus is at its ciritical size, it will continue to grow rather than shrink
+\end{enumerate}
+
+The equation can be broken into two terms, $Zj$, representing the pushing forward of a critical past the threshold, and the other terms, representing the average number of critical nuclei. This equation is well adept for \textbf{homogeneous nucleation}.
+
+\textbf{Homogeneous nucleation} occurs away from the surface of a system, is dispersed throughout, while heterogenous nucleation occurs at the surface.
+
+\subsection{Homogeneous Nucleation}
+
+The rate is governed by the free energy barrier $\Delta G$. The free energy of a droplet is proportional to surface area and volume of the nucleus:
+
+\[\Delta G=\frac{4}{3}\pi r^3 \Delta g_v + 4\pi r^2 \sigma\]
+
+Where $r$ is the radius and $\Delta g_v$ (always negative) is the free energy density per unit volume between the phase that nucleates and the sorrounding phase. For example, between supersaturated air and water nucleating, it is the per volume free energy difference of supersaturated air vs water at the same pressure. $\sigma$ is the surface tension of the nucleus, so strong surface tension frustrates nucleation.
+
+Because surface tension of energy density have opposite signs, there will be a critical radius that is least stable, and this is obtained by taking the derivative and setting it to 0, from this:
+
+\[\Delta G^* = \frac{16\pi \sigma^3}{3|\Delta g_v|^2}\]
+
+This is only valid for a spherical nucleus, but notice that surface area per volume is minimzed for spheres, so any other shape would necessarily have a higher free energy barrier to cross (assuming similar coefficients), which is why only spherical nuclei are assumed.
+
+Since
+
+\[\Delta G = \frac{\Delta H_f (T_m - T)}{T_m}\]
+
+$T_m$ is the melting point
+
+\[\Delta g_v = \frac{\Delta H_f (T_m - T)}{V T_m}\]
+
+So the free energy barrier can be expressed as well as a function of temperature:
+
+\[\Delta G^* = \frac{16\pi \sigma ^3}{3(\Delta H_f)^2}\left(\frac{VT_m}{T_m-T}\right)^2\]
+
+So, the critical barrier increases dramaticall as the temperature approaches the melting point.
+
+\end{document}
